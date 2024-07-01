@@ -1,4 +1,5 @@
 let arrBasket = new Map();
+let deliveryCosts = 5;
 
 function renderDishes(){
     let container = document.getElementById('dishes-list');
@@ -32,15 +33,19 @@ function renderBasketList(){
 }
 
 function generateBasketEntryHTML(dishId, amount){
-    return `<div class="basket-entry">
+    return `<div class="basket-entry" id="basket-entry-${dishId}">
                 <span class="entry-amount">${amount}</span>
                 <span class="entry-dishname">${dishesDB[dishId].name}</span>
                 <span class="entry-totalprice">${calcTotalEntryPrice(dishId, amount)}</span>
+                <div class="entry-controls">
+                    <span class="entry-controlbtn" onclick="reduceEntryAmount(${dishId})">-</span>
+                    <span class="entry-controlbtn" onclick="addDishToBasket(${dishId})">+</span>
+                </div>
             </div>`;
 }
 
-function calcTotalEntryPrice(dishId, amount){
-    return `$$$`;
+function calcTotalEntryPrice(i, amount){
+    return (dishesDB[i].price*amount).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 }
 
 function addDishToBasket(i){
@@ -51,7 +56,30 @@ function addDishToBasket(i){
         arrBasket.set(i, 1);
     }
     renderBasketList();
+    calcBasketSummary()
 };
+
+function reduceEntryAmount(i){
+    let currentAmount = arrBasket.get(i);
+    if(currentAmount > 1){
+        arrBasket.set(i, currentAmount-1);
+    }else {
+        arrBasket.delete(i)
+    }
+    renderBasketList();
+    calcBasketSummary()
+}
+
+function calcBasketSummary(){
+    let subtotalSum = 0;
+    for (let [dishId, amount] of arrBasket) {
+        subtotalSum += amount*dishesDB[dishId].price; 
+    }
+    let totalSum = subtotalSum+deliveryCosts;
+    document.getElementById('summary-subtotal').innerHTML = subtotalSum.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    document.getElementById('summary-delivery').innerHTML = deliveryCosts.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    document.getElementById('summary-total').innerHTML = totalSum.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+}
 
 function setup() {
     renderDishes()
@@ -59,5 +87,3 @@ function setup() {
 window.addEventListener('load', setup);
 
 //TO DO:
-// - in addDishToBasekt funktion prüfen, ob gericht schon in Basket ist, wenn ja, +1, sonst hinzufügen
-// renderBasket funktion schreiben, die aus allen elemten im Basket einen Eintrag in den Warenkorb mit einer For-Schleife erzeugt, die werte 

@@ -26,7 +26,6 @@ header {
 }
 
 .content-container {
-    background-color: red;
     width: calc(100% - 300px);
 }
 

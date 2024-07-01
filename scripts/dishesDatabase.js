@@ -1,62 +1,91 @@
-let dishesDB = [
+let categoryDB = [
     {
         "name": "Shoyu Ramen",
-        "price": 10.50,
-        "description": "Würzige Sojasaucenbrühe mit Nudeln und Gemüse.",
-        "image": "1.jpg"
-    },
-    {
-        "name": "Tonkotsu Ramen",
-        "price": 12.00,
-        "description": "Reichhaltige Schweineknochenbrühe mit zarten Nudeln.",
-        "image": "2.jpg"
+        "description": "Diese Ramen-Suppen basieren auf einer Brühe, die mit Sojasauce gewürzt ist. Sie haben einen herzhaften und leicht salzigen Geschmack.",
+        "image": "shoyu.jpg"
     },
     {
         "name": "Miso Ramen",
-        "price": 11.30,
-        "description": "Herzhafte Miso-Brühe mit Schweinefleisch und Gemüse.",
-        "image": "3.jpg"
+        "description": "Miso Ramen ist bekannt für seine kräftige und reichhaltige Brühe, die mit fermentierter Sojabohnenpaste (Miso) gewürzt ist. Diese Art von Ramen hat einen tiefen, umami-reichen Geschmack.",
+        "image": "miso.jpg"
     },
     {
-        "name": "Spicy Ramen",
-        "price": 13.50,
-        "description": "Scharfe Brühe mit Chili und knackigem Gemüse.",
-        "image": "4.jpg"
-    },
+        "name": "Tonkotsu Ramen",
+        "description": "Tonkotsu Ramen ist eine besonders reichhaltige und cremige Brühe, die durch das lange Kochen von Schweineknochen entsteht. Die Brühe ist weißlich und sehr geschmacksintensiv.",
+        "image": "tonkotsu.jpg",
+    }
+]
+
+
+let dishesDB = [
     {
-        "name": "Shio Ramen",
+        "name": "Shoyu Ramen",
         "price": 9.90,
-        "description": "Leichte Salzbrühe mit Frühlingszwiebeln und Eier.",
-        "image": "5.jpg"
+        "description": "Klassische Sojasaucen-Ramen mit Chashu und Nori.",
+        "image": "1.jpg",
+        "category": 0
     },
     {
-        "name": "Karaage Ramen",
-        "price": 14.00,
-        "description": "Knuspriges frittiertes Hähnchen mit Nudeln und Brühe.",
-        "image": "6.jpg"
+        "name": "Miso Ramen",
+        "price": 10.50,
+        "description": "Würzige Miso-Ramen mit Mais und Bohnenkeimlingen.",
+        "image": "2.jpg",
+        "category": 1
     },
     {
-        "name": "Vegetarisches Ramen",
-        "price": 9.80,
-        "description": "Gemüsebrühe mit Tofu, Pilzen und frischem Gemüse.",
-        "image": "7.jpg"
+        "name": "Tonkotsu Ramen",
+        "price": 11.00,
+        "description": "Reichhaltige Schweineknochenbrühe mit Chashu.",
+        "image": "3.jpg",
+        "category": 2
     },
     {
-        "name": "Seafood Ramen",
-        "price": 14.50,
-        "description": "Meeresfrüchte in kräftiger Brühe mit Nudeln.",
-        "image": "8.jpg"
+        "name": "Shoyu Chashu Ramen",
+        "price": 12.00,
+        "description": "Sojasaucen-Ramen mit extra Chashu.",
+        "image": "4.jpg",
+        "category": 0
     },
     {
-        "name": "Chashu Ramen",
-        "price": 13.20,
-        "description": "Zartes Schweinebauchfleisch in aromatischer Brühe.",
-        "image": "9.jpg"
+        "name": "Miso Butter Corn Ramen",
+        "price": 11.50,
+        "description": "Miso-Ramen mit Butter und Mais.",
+        "image": "5.jpg",
+        "category": 1
     },
     {
-        "name": "Yasai Ramen",
-        "price": 8.70,
-        "description": "Gemüsebrühe mit frischem, saisonalem Gemüse.",
-        "image": "10.jpg"
+        "name": "Tonkotsu Black Garlic Ramen",
+        "price": 13.00,
+        "description": "Schweineknochen-Ramen mit schwarzem Knoblauchöl.",
+        "image": "6.jpg",
+        "category": 2
+    },
+    {
+        "name": "Shoyu Egg Ramen",
+        "price": 8.50,
+        "description": "Sojasaucen-Ramen mit weichem Ei.",
+        "image": "7.jpg",
+        "category": 0
+    },
+    {
+        "name": "Miso Spicy Ramen",
+        "price": 10.90,
+        "description": "Würzige Miso-Ramen mit scharfer Chili-Paste.",
+        "image": "8.jpg",
+        "category": 1
+    },
+    {
+        "name": "Tonkotsu Spicy Ramen",
+        "price": 12.50,
+        "description": "Schweineknochen-Ramen mit scharfer Brühe.",
+        "image": "9.jpg",
+        "category": 2
+    },
+    {
+        "name": "Shoyu Veggie Ramen",
+        "price": 7.90,
+        "description": "Sojasaucen-Ramen mit Gemüse.",
+        "image": "10.jpg",
+        "category": 0
     }
 ];
