@@ -1,0 +1,13 @@
+body {
+    font-family: 'Raleway';
+    color: #000000;
+    font-size: 16px;
+}
+
+.dish-image {
+    width: 200px;
+}
+
+.addToBasket-btn {
+    width: 40px;
+}
