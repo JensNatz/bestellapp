@@ -4,10 +4,55 @@ body {
     font-size: 16px;
 }
 
+header {
+    background-color: #F19A3E;
+    height: 80px;
+    padding: 0 24px 0 24px;
+    display: flex;
+}
+
+.header-content {
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 40px;
+}
+
+.content-wrapper {
+    display: flex ;
+}
+
+.content-container {
+    background-color: red;
+    width: calc(100% - 300px);
+}
+
+.dish-card {
+    display: flex;
+    gap: 24px;
+    margin: 0 0 24px 0;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 16px;
+}
+
 .dish-image {
     width: 200px;
 }
 
 .addToBasket-btn {
-    width: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+.basket-wrapper {
+    width: 300px;
+}
+
+.basket {
+    position: sticky;
+    top: 0;
 }
