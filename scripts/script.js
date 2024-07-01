@@ -3,10 +3,34 @@ let deliveryCosts = 5;
 
 function renderDishes(){
     let container = document.getElementById('dishes-list');
-    for (let i = 0; i < dishesDB.length; i++) {        
-        let dishCard = generateDishcardHTML(i);
-        container.innerHTML += dishCard;
+    let categoriesHTML = '';
+    for (let i= 0; i < categoryDB.length; i++) {
+        categoriesHTML+= generateCategoryHTML(i);
     }
+    container.innerHTML = categoriesHTML;
+}
+
+function generateCategoryHTML(i){
+    return `
+        <div class="dish-category">
+            <img src="" alt="" class="category-image">
+            <h3 class="category-name">${categoryDB[i].name}</h3>
+            <p class="category-description">${categoryDB[i].description}</p>
+            <div class="category-dishes-list">
+                ${generateDishcardsHTML(i)}        
+            </div>
+        </div>
+    `;
+}
+
+function generateDishcardsHTML(categoryId){
+    let dishCardsHTML = '';
+    for (let i = 0; i < dishesDB.length; i++) {
+        if(dishesDB[i].category == categoryId ){
+            dishCardsHTML += generateDishcardHTML(i);
+        }
+    };
+    return dishCardsHTML;
 }
 
 function generateDishcardHTML(i){
@@ -22,7 +46,6 @@ function generateDishcardHTML(i){
         </div>
     `;
 }
-
 
 function renderBasketList(){
     let basketListContainer = document.getElementById('basket-entrylist');

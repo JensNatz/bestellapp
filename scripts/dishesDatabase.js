@@ -16,7 +16,6 @@ let categoryDB = [
     }
 ]
 
-
 let dishesDB = [
     {
         "name": "Shoyu Ramen",
