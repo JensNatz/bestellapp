@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/dishesDatabase.js"></script>
+    <script src="scripts/templates.js"></script>
     <script src="scripts/script.js"></script>
     <title>LieferApp</title>
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -27,28 +30,14 @@
             <div class="basket">
                 <h2>Warenkorb</h2>
                 <div class="basket-entrylist" id="basket-entrylist">
-                    
-                </div>
-                <div class="basket-summary">
-                    <div class="summary-entry">
-                        <span>Zischensumme</span>
-                        <span id="summary-subtotal"></span>
-                    </div>
-                    <div class="summary-entry">
-                        <span>Lieferkosten</span>
-                        <span id="summary-delivery"></span>
-                    </div>
-                    <div class="summary-entry summary-total">
-                        <span>Gesamt</span>
-                        <span id="summary-total"></span>
-                    </div>
-                </div>
 
+                </div>
+                <div id="basket-summary" class="basket-summary">
+
+                </div>
             </div>
         </div>
     </div>
-
 </body>
+
 </html>
-
-
