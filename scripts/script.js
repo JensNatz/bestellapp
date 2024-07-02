@@ -1,5 +1,6 @@
 let arrBasket = new Map();
 let deliveryCosts = 5;
+let maxAmountOfDishesPerOrder = 10;
 
 function renderDishes() {
     let container = document.getElementById('dishes-list');
@@ -60,6 +61,19 @@ function calcBasketSummary() {
     document.getElementById('summary-subtotal').innerHTML = subtotalSum.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
     document.getElementById('summary-delivery').innerHTML = deliveryCosts.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
     document.getElementById('summary-total').innerHTML = totalSum.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    renderOrderButton(totalSum);
+}
+
+function renderOrderButton(totalSum){
+    let orderButton = document.getElementById('basket-orderbtn')
+    let totalAmountOfDishesInBasket = [...arrBasket.values()].reduce((acc, value) => acc + value, 0);
+    if (totalAmountOfDishesInBasket <= maxAmountOfDishesPerOrder){
+        orderButton.innerHTML = `Bezahlen (${totalSum.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })})`;
+        orderButton.disabled = false;
+    } else {
+        orderButton.innerHTML = `Maxmimal ${maxAmountOfDishesPerOrder} Gerichte pro Bestellung`;
+        orderButton.disabled = true;
+    }
 }
 
 function setup() {
