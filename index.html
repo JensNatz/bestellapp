@@ -12,7 +12,6 @@
     <script src="scripts/script.js"></script>
     <title>LieferApp</title>
 </head>
-
 <body>
     <header>
         <div class="header-content">
@@ -20,19 +19,20 @@
         </div>
     </header>
     <div class="content-wrapper">
-        <div class="content-container">
+        <div class="dishes-container">
             hier ist noch platz für ein Header bild
             <div id="dishes-list">
 
             </div>
         </div>
-        <div class="basket-wrapper">
+        <div class="basket-wrapper" id="basket-wrapper">
             <div class="basket">
+                <div class="basket-controls">
+                    <img src="assets/icons/plus.png" onclick="toogleBasketVisibilty()">
+                </div>
                 <h2>Warenkorb</h2>
-                <div class="basket-deliveryoptions">
-                    <div class="delivery-switch">
-                        <div class="switch-handle"></div>
-                    </div>
+                <div id="basket-deliveryoptions" class="basket-deliveryoptions">
+      
                 </div>
                 <div class="basket-entrylist" id="basket-entrylist">
 
@@ -46,6 +46,12 @@
             </div>
         </div>
     </div>
+    <div class="bottom-basket-container">
+        <button id="bottom-basket-orderbutton" class="basket-orderbtn" onclick="toogleBasketVisibilty()">Warenkorb</button>
+    </div>
+    <footer>
+
+    </footer>
 </body>
 
 </html>

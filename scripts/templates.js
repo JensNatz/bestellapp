@@ -1,7 +1,7 @@
 function generateCategoryHTML(i) {
     return `
         <div class="dish-category">
-            <img src="" alt="" class="category-image">
+            <img class="category-image" src="./assets/img/${categoryDB[i].image}" alt="" class="category-image">
             <h3 class="category-name">${categoryDB[i].name}</h3>
             <p class="category-description">${categoryDB[i].description}</p>
             <div class="category-dishes-list">
@@ -9,7 +9,7 @@ function generateCategoryHTML(i) {
             </div>
         </div>
     `;
-}
+};
 
 function generateDishcardsHTML(categoryId) {
     let dishCardsHTML = '';
@@ -19,7 +19,7 @@ function generateDishcardsHTML(categoryId) {
         }
     };
     return dishCardsHTML;
-}
+};
 
 function generateDishcardHTML(i) {
     return `
@@ -33,6 +33,26 @@ function generateDishcardHTML(i) {
             <img src="assets/icons/plus.png" class="addToBasket-btn" onclick="addDishToBasket(${i})"/>
         </div>
     `;
+};
+
+function renderDeliveryOptionsSwitchHTML(){
+    return `
+            <label class="switch">
+                <input type="checkbox">
+                    <span class="slider round">
+                        <div class="slider-content" onclick="switchDeliveryOptions()">
+                            <div class="slider-text">
+                                <span>Lieferung</span>
+                                 <span>ca. 45 Min.</span>
+                            </div>
+                            <div class="slider-text">
+                                <span>Abholung</span>
+                                <span>15 Min.</span>
+                            </div>
+                        </div>
+                    </span>
+                </label>
+    `; d
 }
 
 function generateBasketEntryHTML(dishId, amount) {
@@ -60,13 +80,13 @@ function generateBasketSummaryHTML() {
                 <span>Gesamt</span>
                 <span id="summary-total"></span>
             </div>`;
-}
+};
 
 function generateOrderButtonHTML(){
     return `<button id="basket-orderbtn" class="basket-orderbtn"></button>`;
-}
+};
 
 function generateEmptyBasketHTML() {
     return `<h4>Lust auf Lecker?</h4>
             <p>Suche dir leckere Speisen aus der Karte aus und bestelle direkt.</p>`;
-}
+};
