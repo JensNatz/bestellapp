@@ -62,6 +62,11 @@ function generateBasketSummaryHTML() {
             </div>`;
 }
 
+function generateOrderButtonHTML(){
+    return `<button id="basket-orderbtn" class="basket-orderbtn"></button>`;
+}
+
 function generateEmptyBasketHTML() {
-    return `nix im warenkorb`;
+    return `<h4>Lust auf Lecker?</h4>
+            <p>Suche dir leckere Speisen aus der Karte aus und bestelle direkt.</p>`;
 }

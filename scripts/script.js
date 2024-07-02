@@ -15,17 +15,24 @@ function renderDishes() {
 function renderBasketList() {
     let basketListContainer = document.getElementById('basket-entrylist');
     let basketSummaryContainer = document.getElementById('basket-summary');
+    let basketOrderbuttonContainer = document.getElementById('basket-orderbutton-container');
     if (arrBasket.size > 0) {
         basketListContainer.innerHTML = '';
         for (let [dishId, amount] of arrBasket) {
             basketListContainer.innerHTML += generateBasketEntryHTML(dishId, amount);
         }
         basketSummaryContainer.innerHTML = generateBasketSummaryHTML();
+        basketOrderbuttonContainer.innerHTML = generateOrderButtonHTML();
         calcBasketSummary();
     } else {
-        basketListContainer.innerHTML = '';
-        basketSummaryContainer.innerHTML = generateEmptyBasketHTML();
+        clearBasketList()
     }
+}
+
+function clearBasketList(){
+    document.getElementById('basket-entrylist').innerHTML = '';
+    document.getElementById('basket-summary').innerHTML = generateEmptyBasketHTML();
+    document.getElementById('basket-orderbutton-container').innerHTML = ''
 }
 
 function calcTotalEntryPrice(i, amount) {
