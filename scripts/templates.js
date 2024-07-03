@@ -1,6 +1,6 @@
 function generateCategoryHTML(i) {
     return `
-        <div class="dish-category">
+        <div class="dish-category" id="category-${i}">
             <img class="category-image" src="./assets/img/${categoryDB[i].image}" alt="" class="category-image">
             <h3 class="category-name">${categoryDB[i].name}</h3>
             <p class="category-description">${categoryDB[i].description}</p>
@@ -8,6 +8,14 @@ function generateCategoryHTML(i) {
                 ${generateDishcardsHTML(i)}        
             </div>
         </div>
+    `;
+};
+
+function generateCategoryMenuEntriesHTML(i) {
+    return `
+        <a href="#category-${i}" class="category-menu-entry">
+            ${categoryDB[i].name}
+        </a>
     `;
 };
 
@@ -36,36 +44,39 @@ function generateDishcardHTML(i) {
 };
 
 function renderDeliveryOptionsSwitchHTML(){
-    return `
-            <label class="switch">
+    return `<label class="switch">
                 <input type="checkbox">
-                    <span class="slider round">
-                        <div class="slider-content" onclick="switchDeliveryOptions()">
-                            <div class="slider-text">
-                                <span>Lieferung</span>
-                                 <span>ca. 45 Min.</span>
-                            </div>
-                            <div class="slider-text">
-                                <span>Abholung</span>
-                                <span>15 Min.</span>
-                            </div>
+                <span class="slider round">
+                    <div class="slider-content" onclick="switchDeliveryOptions()">
+                        <div class="slider-text">
+                            <span>Lieferung</span>
+                            <span>ca. 45 Min.</span>
                         </div>
-                    </span>
-                </label>
-    `; d
-}
+                        <div class="slider-text">
+                            <span>Abholung</span>
+                            <span>15 Min.</span>
+                         </div>
+                    </div>
+                </span>
+             </label>
+    `;
+};
 
 function generateBasketEntryHTML(dishId, amount) {
     return `<div class="basket-entry" id="basket-entry-${dishId}">
-                <span class="entry-amount">${amount}</span>
-                <span class="entry-dishname">${dishesDB[dishId].name}</span>
-                <span class="entry-totalprice">${calcTotalEntryPrice(dishId, amount)}</span>
-                <div class="entry-controls">
-                    <span class="entry-controlbtn" onclick="reduceEntryAmount(${dishId})">-</span>
-                    <span class="entry-controlbtn" onclick="addDishToBasket(${dishId})">+</span>
+                <div class="entry-info">
+                    <div class="entry-dish">
+                        <div class="entry-amount-controls">
+                            <img src="./assets/icons/remove.png" class="entry-controlbtn" onclick="reduceEntryAmount(${dishId})">
+                            <span class="entry-amount">${amount}</span>
+                            <img src="./assets/icons/add.png" class="entry-controlbtn" onclick="addDishToBasket(${dishId})">
+                        </div>
+                        <span class="entry-dishname">${dishesDB[dishId].name}</span>
+                    </div>
+                    <span class="entry-totalprice">${calcTotalEntryPrice(dishId, amount)}</span>
                 </div>
             </div>`;
-}
+};
 
 function generateBasketSummaryHTML() {
     return `<div class="summary-entry">
@@ -83,10 +94,13 @@ function generateBasketSummaryHTML() {
 };
 
 function generateOrderButtonHTML(){
-    return `<button id="basket-orderbtn" class="basket-orderbtn"></button>`;
+    return `<button id="basket-orderbtn" class="basket-orderbtn primary-orderbtn" onclick="placeOrder()"></button>`;
 };
 
 function generateEmptyBasketHTML() {
-    return `<h4>Lust auf Lecker?</h4>
-            <p>Suche dir leckere Speisen aus der Karte aus und bestelle direkt.</p>`;
+    return `<div class="basket-emptymessage">
+                <img class="emptymessage-icon" src="./assets/icons/cart.png">
+                <h4 class="emptymessage-claim">Lust auf Lecker?</h4>
+                <p class="emptymessage-text">Suche dir leckere Speisen aus der Karte aus und bestelle direkt!</p>
+            </div>`;
 };

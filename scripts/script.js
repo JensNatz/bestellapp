@@ -5,11 +5,11 @@ let maxAmountOfDishesPerOrder = 10;
 
 function renderDishes() {
     let container = document.getElementById('dishes-list');
-    let categoriesHTML = '';
+    let categorieNavigationContainer = document.getElementById('category-list');
     for (let i = 0; i < categoryDB.length; i++) {
-        categoriesHTML += generateCategoryHTML(i);
+        container.innerHTML += generateCategoryHTML(i);
+        categorieNavigationContainer.innerHTML += generateCategoryMenuEntriesHTML(i);
     }
-    container.innerHTML = categoriesHTML;
     renderBasketList();
 };
 
@@ -98,19 +98,25 @@ function switchDeliveryOptions(){
         currentDeliveryCosts = deliveryCosts;
     }
     calcBasketSummary();
+};
+
+function placeOrder(){
+    toogleSuccessOverlayVisibilty();
+    arrBasket.clear();
+    renderBasketList();
 }
 
 function toogleBasketVisibilty(){
     document.getElementById('basket-wrapper').classList.toggle('basket-wrapper-show');
-}
+};
+
+function toogleSuccessOverlayVisibilty(){
+    document.getElementById('success-overlay').classList.toggle('show-success-overlay');
+};
 
 function setup() {
     renderDishes()
 };
+
 window.addEventListener('load', setup);
 
-// TO DO
-// switch slider stylen
-// mini basket stiylen in responsive ansicht 
-//Farben in der CSS mit varaiblen gestalten
-// Drop shadow basket nur auf linke seite
