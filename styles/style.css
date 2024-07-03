@@ -10,7 +10,7 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: 'Raleway';
@@ -518,9 +518,9 @@ input:checked+.slider:before {
         display: flex;
         justify-content: right;
     }   
-  }
+}
 
-  @media (max-width: 520px) {
+@media (max-width: 520px) {
     body {
         font-size: 12px;
     }
@@ -581,11 +581,10 @@ input:checked+.slider:before {
     .category-image {
         height: 120px;
     }
-  }
+}
 
-  @media (max-width: 360px) {
-
+@media (max-width: 360px) {
     .dish-description {
         display: none;
     }
-  }
+}
