@@ -6,12 +6,12 @@ let categoryDB = [
     },
     {
         "name": "Miso Ramen",
-        "description": "Miso Ramen ist bekannt für seine kräftige und reichhaltige Brühe, die mit fermentierter Sojabohnenpaste (Miso) gewürzt ist. Diese Art von Ramen hat einen tiefen, umami-reichen Geschmack.",
+        "description": "Miso Ramen ist bekannt für seine kräftige und reichhaltige Brühe, die mit fermentierter Sojabohnenpaste (Miso) gewürzt ist.",
         "image": "miso.jpg"
     },
     {
         "name": "Tonkotsu Ramen",
-        "description": "Tonkotsu Ramen ist eine besonders reichhaltige und cremige Brühe, die durch das lange Kochen von Schweineknochen entsteht. Die Brühe ist weißlich und sehr geschmacksintensiv.",
+        "description": "Tonkotsu Ramen ist eine besonders reichhaltige und cremige Brühe, die durch das lange Kochen von Schweineknochen entsteht.",
         "image": "tonkotsu.jpg",
     }
 ]

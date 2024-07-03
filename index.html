@@ -16,19 +16,28 @@
     <header>
         <div class="header-content">
             <img class="main-logo" src="./assets/img/logo_bestellapp.svg">
+            <img class="nav-icon" src="./assets/icons/menu.png">
         </div>
     </header>
     <div class="content-wrapper">
-        <div class="dishes-container">
-            hier ist noch platz für ein Header bild
-            <div id="dishes-list">
-
+        <div class="content-container">
+            <div class="hero-container">
+                <img src="./assets/img/hero_bg.jpg" alt="restaurant-image" class="hero-image">
+                <div class="hero-information">
+                    <img src="./assets/img/sakura_logo.png" alt="restaurant-logo" class="restaurant-logo">
+                    <h1 class="restaurant-name">Sakura Ramen</h1>
+                    <p class="restaurant-slogan">The best Ramen in town</p>
+                    <span class="restaurant-location"><img src="./assets/icons/pin.png" alt="pin-icon" class="pin-icon"> Kapuzinerstraße 31, 80337 München
+                    </span>
+                </div>
+            </div>
+            <div id="dishes-list" class="dishes-list">
             </div>
         </div>
         <div class="basket-wrapper" id="basket-wrapper">
             <div class="basket">
                 <div class="basket-controls">
-                    <img src="assets/icons/plus.png" onclick="toogleBasketVisibilty()">
+                    <img src="assets/icons/close.png" onclick="toogleBasketVisibilty()">
                 </div>
                 <h2>Warenkorb</h2>
                 <div id="basket-deliveryoptions" class="basket-deliveryoptions">
@@ -50,7 +59,9 @@
         <button id="bottom-basket-orderbutton" class="basket-orderbtn" onclick="toogleBasketVisibilty()">Warenkorb</button>
     </div>
     <footer>
-
+        <div class="footer-content">
+            <img class="footer-logo" src="./assets/img/logo_bestellapp.svg">
+        </div>
     </footer>
 </body>
 

@@ -112,3 +112,5 @@ window.addEventListener('load', setup);
 // TO DO
 // switch slider stylen
 // mini basket stiylen in responsive ansicht 
+//Farben in der CSS mit varaiblen gestalten
+// Drop shadow basket nur auf linke seite

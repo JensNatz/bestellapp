@@ -30,7 +30,7 @@ function generateDishcardHTML(i) {
                 <span class="dish-price">${dishesDB[i].price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</span>
                 <p class="dish-description">${dishesDB[i].description}</p>
             </div>
-            <img src="assets/icons/plus.png" class="addToBasket-btn" onclick="addDishToBasket(${i})"/>
+            <img src="assets/icons/add.png" class="addToBasket-btn" onclick="addDishToBasket(${i})"/>
         </div>
     `;
 };
