@@ -18,6 +18,10 @@ body {
     font-size: 16px;
 }
 
+.prevent-scrolling {
+    overflow: hidden;
+}
+
 h1 {
     font-size: 36px;
     font-weight:700;
@@ -231,13 +235,18 @@ footer {
 .basket {
     position: sticky;
     top: 0;
-    padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     padding: 24px 16px;
+    height: calc(100dvh - 80px);
+    box-sizing: border-box;
 }
 
+.basket-entrylist{
+    overflow-y: auto;
+    flex: 1;
+}
 .basket-title {
     font-weight: 24px;
     text-align: center;
@@ -272,6 +281,10 @@ footer {
     font-size: 20px;
     font-weight: 700;
     margin: 16px 0;
+}
+
+.basket-orderbutton-container {
+    justify-self: end;
 }
 
 .basket-orderbtn {
